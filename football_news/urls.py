@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('main.urls')),
 ]
+
+# Perbedaan urls.py pada aplikasi dan urls.py pada proyek?
+# Berkas urls.py pada aplikasi mengatur rute URL spesifik untuk fitur-fitur dalam aplikasi tersebut.
+# Sementara URL tingkat proyek dapat mengimpor rute URL dari berkas urls.py aplikasi-aplikasi.
