@@ -198,11 +198,6 @@ def add_news_entry_ajax(request):
 
     return HttpResponse(b"CREATED", status=201)
 
-@csrf_exempt
-@require_POST
-def add_news_entry_ajax(request):
-    title = strip_tags(request.POST.get("title")) # strip HTML tags!
-    content = strip_tags(request.POST.get("content")) # strip HTML tags!
 
 def proxy_image(request):
     image_url = request.GET.get('url')
